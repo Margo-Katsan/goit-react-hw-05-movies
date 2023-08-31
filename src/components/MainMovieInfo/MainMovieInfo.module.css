@@ -1,0 +1,25 @@
+.container {
+  padding-top: 30px;
+  display: flex;
+  margin-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.poster {
+  margin-right: 30px;
+}
+.info {
+  border: 1px solid #660000;
+  padding: 20px;
+  border-radius: 10px;
+}
+.name {
+}
+.desc {
+}
+.genresTitle {
+}
+.genresList {
+}
+.genreItem {
+}

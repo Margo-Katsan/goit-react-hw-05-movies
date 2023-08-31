@@ -1,0 +1,10 @@
+.raitingList {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+.fullStar,
+.halfStar,
+.emptyStar {
+  fill: #c9ac20;
+}
