@@ -15,7 +15,10 @@ const Home = () => {
 
   useEffect(() => {
     async function fetchingTrends() {
-      if (wasShowed) return;
+      console.log("bulo");
+      if (wasShowed) {
+        return;
+      } 
       try {
         const fetchedTrends = await fetchTrends(page);
         setTrendsList(prevState => prevState.concat(fetchedTrends.results));
