@@ -2,7 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import css from "./SharedLayout.module.css"
 
 export const SharedLayout = () => {
-  const { header, container, nav, link, main, section, active} = css;
+  const { header, container, nav, link, main, section} = css;
   return (
     <>
       <header className={header}>
