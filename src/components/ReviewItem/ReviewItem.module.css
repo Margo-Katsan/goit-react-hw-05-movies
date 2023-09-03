@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+.photo {
+  border-radius: 50%;
+  padding: 10px;
+  margin-right: 10px;
+}
+.user {
+  stroke-width: 1px;
+  color: #ff6666;
+  margin-right: 10px;
+}

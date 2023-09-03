@@ -1,35 +1,30 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
 import { ReviewItem } from "components/ReviewItem/ReviewItem";
 import { fetchReviewsByMovieId } from "api";
+import css from "./Reviews.module.css"
+
 export const Reviews = () => {
   const params = useParams();
   const [reviews, setReviews] = useState([]);
-
-
-  
 
   useEffect(() => {
     async function fetchingReviewsByMovieId() {
       const fetchedReviewsByMovieId = await fetchReviewsByMovieId(params.movieId);
       setReviews(fetchedReviewsByMovieId.results);
-
-
+ 
     }
     fetchingReviewsByMovieId();
   }, [params])
   return (
-    <Swiper
+    <ul
       spaceBetween={50}
       slidesPerView={3}
-      onSlideChange={() => console.log('slide change')}
-
+      className={css.list}
     >
  
-      {reviews.map(review => <SwiperSlide><ReviewItem review={review} /></SwiperSlide>)}
+      {reviews.map(review => <li key={review.id} className={css.item}><ReviewItem reviewItem={review} /></li>)}
 
-    </Swiper>
+    </ul>
   )
 }

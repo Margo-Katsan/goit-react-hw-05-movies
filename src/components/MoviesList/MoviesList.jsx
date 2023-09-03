@@ -5,7 +5,8 @@ import css from "./MoviesList.module.css"
 export const MoviesList = ({ moviesList, page }) => {
   
   return (
-    <ul className={css.list}>
+    <div className={css.container}>
+<ul className={css.list}>
       {moviesList.map(movieItem =>
         <li className={css.listItem} key={movieItem.id}>
           {page ==="/movies" && (
@@ -20,5 +21,7 @@ export const MoviesList = ({ moviesList, page }) => {
           )}
         </li>)}
     </ul>
+    </div>
+    
   )
 }

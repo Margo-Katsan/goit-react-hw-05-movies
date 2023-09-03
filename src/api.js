@@ -13,8 +13,8 @@ export const fetchMovieById = async movieId => {
   return response.data
 }
 
-export const fetchMovieByQuery = async movieQuery => {
-  const response = await axios.get(`search/movie?api_key=${KEY}&query=${movieQuery}&include_adult=true&language=${LANGUAGE}&page=1`);
+export const fetchMovieByQuery = async (movieQuery, page) => {
+  const response = await axios.get(`search/movie?api_key=${KEY}&query=${movieQuery}&include_adult=true&language=${LANGUAGE}&page=${page}`);
   return response.data;
 }
 

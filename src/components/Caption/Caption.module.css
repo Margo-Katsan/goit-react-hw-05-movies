@@ -1,3 +1,6 @@
 .caption {
   text-align: center;
+  margin: 0;
+  margin-bottom: 16px;
+  padding-top: 16px;
 }

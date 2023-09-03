@@ -2,7 +2,8 @@
   display: flex;
   align-items: center;
   height: 50px;
-  background-color: #ff8d8d;
+  background-color: #ff6666;
+  margin-bottom: 30px;
 }
 .form {
   display: flex;
@@ -27,6 +28,7 @@
 .icon {
   fill: white;
 }
+
 .input {
   display: inline-block;
   width: 100%;

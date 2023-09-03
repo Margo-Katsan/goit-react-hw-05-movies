@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.number {
+  font-size: 24px; /* Установите размер шрифта по вашему усмотрению */
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 0, 1) 0%,
+    rgba(184, 134, 11, 1) 63%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+.votes {
+  display: block;
+  width: 40px;
+  text-align: end;
+  margin-left: auto;
+  color: grey;
+}

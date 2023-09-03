@@ -1,3 +1,8 @@
+.container {
+  width: 1000px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
 .list {
   display: grid;
   max-width: calc(100vw - 48px);
