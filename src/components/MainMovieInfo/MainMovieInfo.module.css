@@ -1,5 +1,4 @@
 .container {
-  padding-top: 30px;
   display: flex;
   margin-bottom: 30px;
   padding-left: 30px;
@@ -20,6 +19,8 @@
 .genresTitle {
 }
 .genresList {
+  list-style: none;
+  padding: 0;
 }
 .genreItem {
 }

@@ -1,8 +1,10 @@
+import { Suspense } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import { ThreeDots } from 'react-loader-spinner';
 import css from "./SharedLayout.module.css"
 
 export const SharedLayout = () => {
-  const { header, container, nav, link, main, section} = css;
+  const { header, container, nav, link, main, mainWrapper} = css;
   return (
     <>
       <header className={header}>
@@ -14,9 +16,21 @@ export const SharedLayout = () => {
         </div>
       </header>
       <main className={main}>
-        <section className={section}>
-          <Outlet />
-        </section>
+        <div className={mainWrapper}>
+          <Suspense fallback={<ThreeDots
+    height="80"
+    width="80"
+    radius="9"
+    color="#660000"
+    ariaLabel="three-dots-loading"
+    
+    wrapperStyle={{
+    justifyContent: "center"}}
+  />}>
+            <Outlet />
+          </Suspense>
+          
+        </div>
       </main>
     </>
   );

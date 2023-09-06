@@ -4,10 +4,12 @@
 .default {
   width: 100%;
   height: 230px;
-  background-color: #cdcdcd;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-color: #cdcdcd;
 }
 .defaultImage {
   color: white;

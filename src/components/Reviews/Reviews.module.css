@@ -1,13 +1,20 @@
 .list {
   padding: 30px;
+
   list-style: none;
 }
 .item {
   width: 800px;
-  border: 1px solid #ff6666;
-  border-radius: 5px;
   padding: 20px;
+
+  border: 1px solid #660000;
+  border-radius: 5px;
 }
 .item:not(:last-child) {
   margin-bottom: 30px;
+}
+.noReviews {
+  text-align: center;
+
+  font-weight: 700;
 }

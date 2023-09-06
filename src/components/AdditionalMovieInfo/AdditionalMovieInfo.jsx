@@ -1,4 +1,6 @@
+import { Suspense } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import { Loading } from "components/Loading/Loading";
 import css from "./AdditionalMovieInfo.module.css"
 
 export const AdditionalMovieInfo = () => {
@@ -13,7 +15,9 @@ export const AdditionalMovieInfo = () => {
           <NavLink className={link} to="reviews">Reviews</NavLink>
         </li>
       </ul>
-    <Outlet />
+      <Suspense fallback={<Loading/>}>
+        <Outlet />
+      </Suspense>
     </div>
   )
 }

@@ -1,33 +1,24 @@
-.container {
-}
-
 .list {
-  text-align: center;
-  margin-left: 0;
-  margin-right: 0;
-
-  height: 50px;
-  display: flex;
-  align-items: center;
-
-  background-color: #660000;
   display: flex;
   align-items: center;
   gap: 20px;
+  height: 50px;
+
+  background-color: #660000;
   list-style: none;
 }
-.listItem {
-}
+
 .link {
   color: #e0e0e0;
   text-decoration: none;
   &:global.active {
-    color: black;
-    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
     height: 40px;
     padding: 0 10px;
     border-radius: 8px;
-    display: flex;
-    align-items: center;
+
+    color: black;
+    background-color: #e0e0e0;
   }
 }

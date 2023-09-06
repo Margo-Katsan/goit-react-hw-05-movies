@@ -18,7 +18,7 @@ export const SearchBar = ({onChangeQuery}) => {
           placeholder="Search movies"
         />
       <button type="submit" className={css.button}>
-        <GiFilmProjector className={css.icon} size={30}/>
+        <GiFilmProjector className={css.icon} size={30} color="#660000"/>
          
         </button>
       </form>
