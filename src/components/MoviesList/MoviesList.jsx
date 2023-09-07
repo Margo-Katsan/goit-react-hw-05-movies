@@ -7,7 +7,7 @@ export const MoviesList = ({ moviesList, page }) => {
   
   return (
     <div className={css.container}>
-<ul className={css.list}>
+      <ul className={css.list}>
       {moviesList.map(movieItem =>
         <li className={css.listItem} key={movieItem.id}>
           {page ==="/movies" && (

@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 import { Loading } from "components/Loading/Loading";
 import { Caption } from "components/Caption/Caption";
 import { MoviesList } from "components/MoviesList/MoviesList";
@@ -29,9 +30,12 @@ const Home = () => {
         setWasShowed(true);
       }
       catch (error) {
-        
+        toast.error('Oops! Something went wrong!', {
+          position: "top-center",
+          theme: "dark",
+          hideProgressBar: true,
+        });
       }
-      
     }
     fetchingTrends();
   }, [page, loadMoreBtn, wasShowed]);
@@ -39,7 +43,6 @@ const Home = () => {
   const loadMore = () => {
     setWasShowed(false);
     setPage(prevState => prevState + 1);
-
   }
 
   return (
@@ -52,6 +55,7 @@ const Home = () => {
       {loadMoreBtn && (
         <Button onLoadMore={loadMore}/>
       )}
+      <ToastContainer />
     </>
   )
 };

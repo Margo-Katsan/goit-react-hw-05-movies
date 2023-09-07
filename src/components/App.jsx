@@ -6,6 +6,7 @@ import css from "./App.module.css";
 const Home = lazy(() => import('pages/Home'));
 const Movies = lazy(() => import('pages/Movies'))
 const MoviesDetails = lazy(() => import('pages/MovieDetails'));
+const NotFound = lazy(() => import('pages/NotFound'));
 const CastList = lazy(() => import('./CastList/CastList'));
 const Reviews = lazy(() => import('./Reviews/Reviews'));
 
@@ -20,8 +21,9 @@ export const App = () => {
             <Route path="cast" element={<CastList />}></Route>
             <Route path="reviews" element={<Reviews />}></Route>
           </Route>
-          <Route path="*" element={<p>Cnhfybwf yty fqltyf</p>} />
-        </Route> 
+          <Route path="*" element={<NotFound />} />
+        </Route>
+        
       </Routes>
     </div>
   );

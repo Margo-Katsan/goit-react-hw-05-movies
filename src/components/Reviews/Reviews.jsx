@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 import { ReviewItem } from "components/ReviewItem/ReviewItem";
 import { fetchReviewsByMovieId } from "api";
 import css from "./Reviews.module.css"
@@ -15,7 +16,11 @@ const Reviews = () => {
         setReviews(fetchedReviewsByMovieId.results);
       }
       catch (error) {
-        
+        toast.error('Oops! Something went wrong!', {
+          position: "top-center",
+          theme: "dark",
+          hideProgressBar: true,
+        });
       }
     }
     fetchingReviewsByMovieId();
@@ -29,6 +34,7 @@ const Reviews = () => {
       {reviews.length === 0 && (
         <p className={css.noReviews}>We don't have any reviews for this movie</p>
       )}
+      <ToastContainer />
     </>
   )
 }

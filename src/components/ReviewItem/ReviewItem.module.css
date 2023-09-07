@@ -1,19 +1,22 @@
-.wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 .userInfo {
   display: flex;
   align-items: center;
 }
-.photo {
-  border-radius: 50%;
-  padding: 10px;
-  margin-right: 10px;
-}
-.user {
-  stroke-width: 1px;
-  color: #660000;
-  margin-right: 10px;
+@media screen and (min-width: 1060px) {
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .photo {
+    border-radius: 50%;
+    padding: 10px;
+    margin-right: 10px;
+  }
+  .user {
+    stroke-width: 1px;
+    color: #660000;
+    margin-right: 10px;
+  }
 }

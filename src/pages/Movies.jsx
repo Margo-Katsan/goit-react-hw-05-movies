@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 import { SearchBar } from "components/SearchBar/SearchBar";
 import { Loading } from "components/Loading/Loading";
 import { MoviesList } from "components/MoviesList/MoviesList";
@@ -11,15 +11,12 @@ import { fetchMovieByQuery } from "api";
 const Movies = () => {
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get('query') ?? '';
-  const page = searchParams.get('page' ?? 1);
   const [moviesOnRequest, setMoviesOnRequest] = useState([]);
   const [loadMoreBtn, setLoadMoreBtn] = useState(false);
   const [loading, setLoading] = useState(false);
+  const query = searchParams.get('query') ?? '';
+  const page = searchParams.get('page' ?? 1);
  
-  
-
-
   useEffect(() => {
     async function fetchingMovieByQuery() {
       if (query === '') {
@@ -33,7 +30,6 @@ const Movies = () => {
         setLoadMoreBtn(true);
    
         if (fetchedMovieByQuery.total_results === 0) {
-
           toast.warn("Sorry, there are no images matching your search query. Please try again.", {
             position: "top-center",
             theme: "dark",
@@ -46,9 +42,12 @@ const Movies = () => {
         }
       }
       catch(error) {
-        toast.error('Oops! Something went wrong!');
+        toast.error('Oops! Something went wrong!', {
+          position: "top-center",
+          theme: "dark",
+          hideProgressBar: true,
+        });
       }
-      
     }
     fetchingMovieByQuery();
   }, [query, page]);
@@ -56,24 +55,21 @@ const Movies = () => {
   const changeQuery = newQuery => {
     if (newQuery === "") {
       toast.warn("You didn't enter anything into the search engine", {
-            position: "top-center",
-            theme: "dark",
-            hideProgressBar: true,
-          });
+        position: "top-center",
+        theme: "dark",
+        hideProgressBar: true,
+      });
       setSearchParams({});
       setLoadMoreBtn(false);
     }
     else {
       setSearchParams({ query: newQuery, page: 1 });
     }
-    
- 
     setMoviesOnRequest([]);
   }
+
   const loadMore = () => {
-
     setSearchParams({query, page: parseInt(page)+1});
-
   }
   
   return (

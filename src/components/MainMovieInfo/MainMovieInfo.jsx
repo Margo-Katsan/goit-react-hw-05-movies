@@ -2,6 +2,7 @@ import css from "./MainMovieInfo.module.css"
 
 export const MainMovieInfo = ({ imageURL, imageAlt, title, overview, genres }) => {
   const { container, poster, info, name, desc, genresTitle, genresList, genreItem } = css;
+  
   return (
     <div className={container}>
       <img src={imageURL} alt={imageAlt} width="300" className={poster} />

@@ -17,13 +17,10 @@ export const SearchBar = ({onChangeQuery}) => {
           autoFocus
           placeholder="Search movies"
         />
-      <button type="submit" className={css.button}>
-        <GiFilmProjector className={css.icon} size={30} color="#660000"/>
-         
+        <button type="submit" className={css.button}>
+          <GiFilmProjector className={css.icon} size={30} color="#660000"/>
         </button>
       </form>
     </div>
-    
-    
   )
 }
